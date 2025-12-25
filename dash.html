@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./dash.css">
+<title>مستشفى الخليل - Dashboard</title>
+</head>
+<body>
+<header>مستشفى الخليل - Dashboard</header>
+<main>
+<h2>لوحة التحكم - إحصائيات المواعيد</h2>
+
+<div class="dashboard" id="stats"></div>
+
+<h2>آخر 5 مواعيد</h2>
+<table>
+    <thead>
+        <tr>
+            <th>رقم الحجز</th>
+            <th>الاسم</th>
+            <th>العمر</th>
+            <th>القسم</th>
+            <th>التاريخ</th>
+            <th>الوقت</th>
+        </tr>
+    </thead>
+    <tbody id="lastAppointments"></tbody>
+</table>
+
+<script>
+// جلب المواعيد من LocalStorage
+let appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+
+// الأقسام
+const departments = ['الأسنان','العيون','الباطنة','الأطفال'];
+
+// عرض الإحصائيات
+function displayStats(){
+    const statsDiv = document.getElementById('stats');
+    statsDiv.innerHTML = '';
+
+    // العدد الكلي
+    const totalCard = document.createElement('div');
+    totalCard.className = 'card';
+    totalCard.innerHTML = `<h3>عدد المواعيد الكلي</h3><p>${appointments.length}</p>`;
+    statsDiv.appendChild(totalCard);
+
+    // عدد المواعيد لكل قسم
+    departments.forEach(dept => {
+        const count = appointments.filter(a => a.department === dept).length;
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `<h3>${dept}</h3><p>${count}</p>`;
+        statsDiv.appendChild(card);
+    });
+}
+
+// عرض آخر 5 مواعيد
+function displayLastAppointments(){
+    const tbody = document.getElementById('lastAppointments');
+    tbody.innerHTML = '';
+    appointments.slice(0,5).forEach(app => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${app.booking}</td>
+            <td>${app.name}</td>
+            <td>${app.age}</td>
+            <td>${app.department}</td>
+            <td>${app.date}</td>
+            <td>${app.time}</td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+// عند تحميل الصفحة
+displayStats();
+displayLastAppointments();
+</script>
+</body>
+</html>

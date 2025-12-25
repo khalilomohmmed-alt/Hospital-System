@@ -1,0 +1,25 @@
+body {
+    font-family: Arial; background:#f0f2f5; margin:0; text-align:center;
+}
+header {
+    background:#1e90ff; color:#fff; padding:20px; font-size:28px; font-weight:bold;
+}
+main {
+    max-width:900px; margin:30px auto; background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,.1);
+    text-align:right;
+}
+.dashboard {
+    display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-bottom:30px;
+}
+.card {
+    flex:1 1 150px; background:#f7f9fc; padding:15px; border-radius:10px; border-left:4px solid #1e90ff;
+}
+table {
+    width:100%; border-collapse:collapse;
+}
+th, td {
+    border:1px solid #ccc; padding:10px; text-align:right;
+}
+th {
+    background:#1e90ff; color:#fff;
+}

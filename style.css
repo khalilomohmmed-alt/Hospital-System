@@ -1,0 +1,30 @@
+body {
+    font-family: Arial; background:#f0f2f5; margin:0; text-align:center;
+}
+header {
+    background:#1e90ff; color:#fff; padding:20px; font-size:28px; font-weight:bold;
+}
+main {
+    max-width:700px; margin:30px auto; background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+form {
+    display:flex; flex-direction:column; gap:15px; text-align:right;
+}
+input,select,button {
+    padding:10px; border-radius:8px; border:1px solid #ccc; font-size:16px; text-align:right;
+}
+button {
+    background:#1e90ff; color:#fff; border:none; cursor:pointer;
+}
+button:hover {
+    background:#0d6efd;
+}
+.appointment-card {
+    background:#f7f9fc; padding:15px; margin-top:10px; border-radius:10px; border-left:4px solid #1e90ff; text-align:right;
+}
+.success{
+    color:green; margin-bottom:15px;
+}
+.error {
+    color:red; margin-bottom:15px;
+}

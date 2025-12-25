@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مستشفى الخليل - حجز موعد</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header>مستشفى الخليل</header>
+<main>
+<h2>حجز موعد</h2>
+
+<div id="message"></div>
+
+<form id="appointmentForm">
+  <input type="text" id="name" placeholder="اسم المريض" required>
+  <input type="number" id="age" placeholder="العمر" required>
+  <select id="department" required>
+    <option value="">اختر القسم</option>
+    <option>الأسنان</option>
+    <option>العيون</option>
+    <option>الباطنة</option>
+    <option>الأطفال</option>
+  </select>
+  <button type="submit">حجز الموعد</button>
+</form>
+
+<div id="appointments">
+  <h3>المواعيد المحجوزة:</h3>
+</div>
+</main>
+
+<script src="./script.js"></script>
+</body>
+</html>
